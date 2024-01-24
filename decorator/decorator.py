@@ -30,6 +30,12 @@ def python_deco(f):
 def hello():
     print("Hello world")
 
+def deco(f):
+    print("jsut defined!")
+    return f
+@deco
+def greet(name):
+    print(f"greeting {name}")
 
-hello()
-    
+if __name__ == "__main__":
+    pass
