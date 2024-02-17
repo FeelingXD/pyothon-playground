@@ -10,13 +10,10 @@ import random
 
 
 def mc_pick(participant_choice, answer):
-    global pick
-    while pick := random.randint(0, 2):
-        if pick == participant_choice and pick == answer:
-            pass
+    while True:
+        pick = random.randint(0, 2)
         if pick != participant_choice and pick != answer:
             break
-        pass
     return pick
 
 
@@ -39,7 +36,7 @@ def monty_hall_problem():
 if __name__ == "__main__":
     not_change_cnt = 0
     change_cnt = 0
-    for _ in range(case := 100_000):  # 1만번 시행
+    for _ in range(case := 100_000):  #
         not_change, change = monty_hall_problem()
         change_cnt = change_cnt + 1 if change else change_cnt
         not_change_cnt = not_change_cnt + 1 if not_change else not_change_cnt
